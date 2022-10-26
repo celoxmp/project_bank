@@ -1,24 +1,18 @@
 import java.util.List;
+import lombok.Getter;
+import lombok.Setter;
 
 public class Banco {
+	
+	private @Getter @Setter String nome;
+	private @Getter @Setter List<Conta> contas;
 
-	private String nome;
-	private List<Conta> contas;
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	public List<Conta> getContas() {
-		return contas;
-	}
-
-	public void setContas(List<Conta> contas) {
-		this.contas = contas;
+	public void listContasClientes() {
+		for(Conta conta : contas) {
+			System.out.println("Cliente: "+conta.cliente.getNome());
+			System.out.println("Agencia: "+conta.getAgencia()+" Conta:"+conta.getNumero()+" Saldo: "+conta.getSaldo());
+			System.out.println();
+		}
 	}
 
 }

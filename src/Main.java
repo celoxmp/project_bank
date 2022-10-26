@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
 
@@ -13,6 +15,14 @@ public class Main {
 		
 		cc.imprimirExtrato();
 		poupanca.imprimirExtrato();
+
+		Banco banco = new Banco();
+		List<Conta> aux = new ArrayList<Conta>();
+		aux.add(poupanca);
+		aux.add(cc);
+		banco.setContas(aux);
+		System.out.println("=== Contas ===");
+		banco.listContasClientes();
 	}
 
 }
